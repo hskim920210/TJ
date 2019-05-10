@@ -1,0 +1,69 @@
+eclipse.org - download - download packages
+
+https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-03/R/eclipse-jee-2019-03-R-win32-x86_64.zip
+
+Eclipse IDE for Enterprise Java Developers
+
+
+workspace
+d:\dev\html\sources
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+http://tomcat.apache.org/ ( 아파치 톰캣 )
+다운로드 - 톰캣9
+9.0.19
+core - 압축파일 X
+	Installer로 받기
+
+http://127.0.0.1:8080/ 들어가서 톰캣 나오면 잘 설치된거임
+
+C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\ROOT
+기본 html파일 경로
+http://127.0.0.1:8080/p.html
+이런식으로 파일에 접근할 수 있다.
+http://127.0.0.1:8080/hello/standard.html
+
+내가 설치한 웹서버톰캣을 이클립스와 연동
+
+windows - preferences - 서버 - 런타임 인바이론먼트 - 애드 - 톰캣9.0
+설치경로 : C:\Program Files\Apache Software Foundation\Tomcat 9.0
+
+이클립스 하단에 서버탭 - create new server - 톰캣 9.0
+우클릭- 스타트 - 에러 ( 톰캣이 8080 쓰고있음 )
+
+우측하단에 실행중인 - 톰캣 우클릭 중지 또는 
+제어판 -관리도구 - 서비스 - Apache Tomcat 9.0  중지 또는
+시작 - Monitor Tomcat - 스탑
+
+이제 이클립스에서 서버 우클릭 스타트
+
+new - web dynamic ~~~
+target runtime = 아파치 톰캣 9.0 확인 ( 실제 설치한 버전 선택 )
+day_01 - webcontent를 주로 사용할 것임 이 경로에 만들거임. 두 폴더는 아직 신경쓰지말자
+	- new htmlfile
+charset : utf-8을 주로 씀 : window-preferences - encoding 검색 - workspace 하단에 텍스트파일 인코딩 - 디폴트 (MS949) - 맥에서 작업하면 깨져보임 => other - utf-8
+css, html, jsp 모두 utf-8로 바꾸자
+다시 hello html파일 만들면 charset이 utf-8로 바뀐다
+
+
+프로젝트 우클릭 - run as 서버로. 
+주소에 html파일 치면 실행이된다
+webcontent 바로 밑의 파일들이 읽힌다
+
+
+window- webbrowser - chrome 으로 바꾼다 * 크롬의 호환성이 좋다.
+////////////////////////////////////////////////////////////////////////////
+
+정리
+웹 어플리케이션 개발, 시 이클립스 설치과정
+1. 웹 서버 등록
+
+2. 서버 생성(이클립스 내부에서 동작하는 서버)
+ - 반드시 동작 확인
+ - 외부의 웹 서버가 동작하고 있는 경우 에러 발생
+
+3. 문자 인코딩 셋 설정
+ - UTF-8로 설정
+ - encoding으로 검색 후, 변경
