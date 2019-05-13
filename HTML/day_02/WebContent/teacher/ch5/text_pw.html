@@ -1,0 +1,29 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+     <title> 웹 폼</title>
+     <style>
+	 label {
+		font-size:14px;
+		line-height:25px; 
+	 }
+	 label em{
+		color:red;
+		font-weight:800; 
+	 }
+	 </style>
+  </head>
+  <body>
+	<form>
+    <fieldset class="login">
+    <!-- maxlength에 지정한 갯수만큼 작성 가능 -->
+    <!-- size는 텍스트필드의 길이를 설정 -->
+    	<label>아이디: <input type="text" id="user_id" size="10" maxlength = "8"></label>
+        <label>비밀번호: <input type="password" id="user_pw" size="10" maxlength = "16"></label>
+        <input type="submit" value="로그인">
+    </fieldset>
+    
+    <p><label>search: <input type="search" id="search" size="50" maxlength = "8"></label></p>
+  </form>
+  </body>
+</html>

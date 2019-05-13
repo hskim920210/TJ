@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 화면</title>
+</head>
+<body>
+
+<h2>회원가입</h2>
+
+<form action="./regist.jsp" method="post">
+	<label>아이디 : <input type="text" name="id" required="required" placeholder = "아이디를 입력하세요."></label> <br/>
+	<label>패스워드 : <input type="text" required="required" name="pw"></label> <br/>
+	<label>이름 : <input type="text" required="required" name="name" placeholder = "이름을 입력하세요."></label> <br/>
+	
+	<label for="user_tel">연락처 : </label>
+	<input type="text" name="tel" id="user_tel"> <br/>
+	
+	<label for="user_address">주소 : </label>
+	<input type="text" name="address" id="user_address" autofocus> <br/>
+	
+	<input type="number" name="age" id="user_age" value = "10" min = "-130" max = "150" step = "14"> <br/>
+	<input type="range" name="age" id="user_age" value = "10" min = "-130" max = "150" step = "14"> <br/>
+
+	성별 : <label>남 <input type="radio" name="gender"></label> 
+	<label>여 <input type="radio" name="gender"></label> <br/>
+	
+	<input type="submit" value="회원가입">
+	<input type = "reset" value = "폼 초기화">
+</form>
+
+<!-- 폼 바깥쪽에선 작동을 안한다. -->
+<input type = "reset" value = "초기화">
+
+</body>
+</html>
+
+
+
+
+
