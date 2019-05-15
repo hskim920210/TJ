@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단 출력 예제</title>
+</head>
+<body>
+
+<script type="text/javascript">	
+	for( var i = 2 ; i < 10 ; i++ ) {
+		document.write("<h2>")
+		document.write(i + " 단을 출력합니다.")
+		document.write("</h2>")
+		
+		for( var j = 1 ; j < 10 ; j++ ) {
+			// Math.floor 는 소숫점 아래를 버려버린다. 0 ~ 255
+			var r = Math.floor(Math.random() * 256)
+			var g = Math.floor(Math.random() * 256)
+			var b = Math.floor(Math.random() * 256)			
+			
+			var result = "<p>"
+			result += '<font color="rgba(' + r + ',' + g+  ',' + b + ')">'
+			result += i + " * " + j + " = " + (i*j)
+			result += '</font>'
+			result += '</p>'
+			document.write(result)
+		}
+		
+		document.write('<br>')		
+	}	
+</script>
+
+</body>
+</html>

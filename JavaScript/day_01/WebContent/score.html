@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>성적 처리</title>
+<script type="text/javascript">
+	n1 = prompt("1번째 성적", "0");
+	// 실수는 더블이 없고 플롯이 있다.
+	n1 = parseFloat(n1);
+	
+	n2 = parseInt(prompt("2번째 성적", "0"));
+	n3 = parseInt(prompt("3번째 성적", "0"));
+	
+	tot = n1 + n2 + n3;
+	avg = tot / 3;
+	
+	grade = '?';
+	if(avg > 100 || avg < 0) {
+		grade = '?';
+	} else if (avg >= 90) {
+		grade = 'A'
+	} else if (avg >= 80) {
+		grade = 'B';
+	} else if (avg >= 70) {
+		grade = 'C';
+	} else if (avg >= 60) {
+		grade = 'D';
+	} else {
+		grade = 'F';
+	}
+	
+	document.write("<h2>");
+	document.write("총점 : " + tot);
+	document.write("</h2>");
+	
+	document.write("<h2>");
+	document.write("평균 : " + avg);
+	document.write("</h2>");
+	
+	document.write("<h2>");
+	document.write("성적 평가는 " + grade + "입니다.");
+	document.write("</h2>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

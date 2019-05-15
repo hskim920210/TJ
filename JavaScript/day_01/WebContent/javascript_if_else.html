@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if와 else</title>
+
+<script type = "text/javascript">
+	var num = 10;
+	
+	if ( num <= 100 ) {
+		document.write(num);
+	}
+	
+	// 0, null, ""(빈문자), undefined는 모두 false
+	if ( 0 ) {
+		document.write("조건문은 false");
+	}
+	if ( "" ) {
+		document.write("조건문은 false");
+	}
+	if ( null ) {
+		document.write("조건문은 false");
+	}
+	if ( undefined ) {
+		document.write("조건문은 false");
+	}
+	
+	// 위의 값을 제외한 모든 값은 true
+	if ( 151654 ) {
+		document.write("<p>조건문은 true</p>");
+	}
+	if ( "trshjd" ) {
+		document.write("<p>조건문은 true</p>");
+	}
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

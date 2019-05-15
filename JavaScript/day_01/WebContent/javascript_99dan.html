@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>99단</title>
+<script type="text/javascript">
+
+	for(var i = 2 ; i <= 9 ; i++){
+		var col = Math.random() * 0xffffff;
+		col = parseInt(col).toString(16);
+		col = "#" + col;
+
+			document.write(i + "단" +"</br>");
+			for(var j = 1 ; j <= 9 ; j++){
+			document.write("<font color = " + col + ">");
+			document.write(i + "X" + j + " = " + i*j + "</br>");
+			}
+			document.write("</font>");
+		document.write("</br>")
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
