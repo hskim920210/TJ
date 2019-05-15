@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>하위 선택자</title>
+
+<style type = "text/css">
+	#member_info > .id_info {color: blue;}
+	#member_info > .pw_info {color: red;}
+</style>
+
+</head>
+<body>
+<!-- >는 딱 자식까지만 줄 수 있ㄷ. -->
+<div id = "member_info">
+	<div id = "member_id_pw">
+	<p class = "id_info">ID 정보는 필수 항목입니다.</p>
+	<p class = "pw_info">PW 정보는 필수 항목입니다.</p>
+	</div>
+</div>
+
+</body>
+</html>
