@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수의 선언과 사용</title>
+
+<script type="text/javascript">
+// 함수 : 기능의 단위를 정의하는 문법
+// 함수는 선언된 이후 함수의 호출 구문에 의해서 실행될 수 있다.
+function hello() {
+	// body의 div에 접근하기위해 document.getElementById로
+	var box = document.getElementById("box");
+	box.innerHTML = "Hello 함수 실행";
+}
+</script>
+
+</head>
+<body>
+
+<input type = "button" value = "Click ~ !" onclick="hello();">
+
+<div id = "box"> </div>
+
+</body>
+</html>

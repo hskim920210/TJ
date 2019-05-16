@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 리턴문의 사용</title>
+<script type="text/javascript">
+function display() {
+	var n1 = document.f.n1.value;
+	var n2 = document.f.n2.value;
+	var r = sum(n1, n2);
+	
+	var box = document.getElementById("box");
+	box.innerHTML = n1 + "+" + n2 + " = " + r;
+}
+function sum(n1, n2) {
+	var r = parseFloat(n1) + parseFloat(n2);
+	return r;
+}
+</script>
+</head>
+<body>
+<form action = "#" name = "f">
+1번째 숫자 : <input type = "text" size = "5" name = "n1"> </br>
+2번째 숫자 : <input type = "text" size = "5" name = "n2"> </br>
+</form>
+<input type = "button" value = "덧셈 결과 확인" onclick="display();">
+<div id = "box"> </div>
+</body>
+</html>

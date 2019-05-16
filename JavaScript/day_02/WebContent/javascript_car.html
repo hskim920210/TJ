@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자동차 견적</title>
+<style type = "text/css">
+div {
+font-size: 30px;
+text-align: center;
+}
+#k5 {
+	width : 650px;
+	height : 400px;
+}
+
+table {
+	width: 650px;
+}
+
+#col {
+	background-color: navy;
+	color: white;
+}
+#last {
+	font-size: 30px;
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+function price() {
+	var price = document.getElementById("last").defaultValue;
+	if (seat.checked == true){
+		price = parseInt(price) + parseInt(seat.value);
+	} 
+	if (navi.checked == true){
+		price = parseInt(price) + parseInt(navi.value);
+	} 
+	if (sun.checked == true){
+		price = parseInt(price) + parseInt(sun.value);
+	} 
+	document.getElementById("last").value = price;
+}
+</script>
+</head>
+<body>
+<div id = "div">
+<h1> 자동차 견적 </h1>
+<img src = "./images/k5.jpg" id = "k5">
+
+<table border="1" align = "center">
+	<tr id = "col">
+	<th>옵션</th>
+	<th>추가 가격</th>
+	<th>선택</th>
+	</tr>
+	
+	<tr>
+	<th>인조가죽시트</th>
+	<th>250,000원</th>
+	<th><input type = "checkbox" id = "seat" name = "seat" onclick="price();" value = "250000"></th>
+	</tr>
+	
+	<tr>
+	<th>내비게이션</th>
+	<th>250,000원</th>
+	<th><input type = "checkbox" id = "navi" name = "navi" onclick="price();" value = "250000"></th>
+	</tr>
+	
+	<tr>
+	<th>선루프</th>
+	<th>440,000원</th>
+	<th><input type = "checkbox" id = "sun" name = "sun" onclick="price();" value = "440000"></th>
+	</tr>
+	
+	<tr>
+	<th id = "col">(기본)차량 가격</th>
+	<th colspan = "2" align = "center"><input type = "text" id = "last" name = "last" value = "13450000" readonly="readonly"></th>
+	</tr>
+</table>
+
+</div>
+</body>
+</html>

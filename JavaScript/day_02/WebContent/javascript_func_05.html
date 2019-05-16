@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 객체</title>
+<script type="text/javascript">
+document.onmousemove = function(e){
+	var pos_x = e.pageX;
+	var pos_y = e.pageY;
+	console.log(pos_x + ", " + pos_y);
+	box.innerHTML = pos_x + ", " + pos_y;
+}
+document.onclick = function(e){
+	var pos_x = e.pageX;
+	var pos_y = e.pageY;
+	console.log(pos_x + ", " + pos_y);
+	box.innerHTML = pos_x + ", " + pos_y;
+}
+</script>
+<style type = "text/css">
+div{
+font-size: 100px;
+}
+</style>
+</head>
+<body>
+<div id = "box"> </div>
+</body>
+</html>
