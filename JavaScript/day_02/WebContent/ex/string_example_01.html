@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>주민등록번호 성별 파악 예제</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	// 주민등록번호를 입력받아 성별에 해당하는 숫자를 추출하여
+	// 성별을 출력하세요.
+	// 주민등록번호의 앞 6자리와 뒤의 7자리 사이에는 반드시
+	// - 이 있어야 합니다.	
+	var strInput = prompt("주민번호를 입력하세요", "");
+	strInput = strInput.trim();
+	
+	if( strInput.match("-") == null ) {
+		alert("- 을 입력하세요.");
+		location.reload();
+	}
+	
+	// 1번째 방법
+	// 인덱스를 활용
+	var index01 = strInput.indexOf("-") + 1;
+	var index02 = strInput.length-1;
+	var strTarget = strInput.substring(index01, index02);
+	strTarget = strTarget.trim();
+	
+	// 2번째 방법
+	// split 활용
+	var arrTarget = strInput.split("-");
+	arrTarget[1] = arrTarget[1].trim();
+	
+	var nGender = parseInt(strTarget.charAt(0));
+	//var nGender = parseInt(arrTarget[1].charAt(0));
+	
+	if( nGender == 1 || nGender == 3 )
+		document.write("남성입니다.");
+	else if( nGender == 2 || nGender == 4 )
+		document.write("여성입니다.");
+	else
+		document.write("잘못된 입력입니다.");
+	
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
