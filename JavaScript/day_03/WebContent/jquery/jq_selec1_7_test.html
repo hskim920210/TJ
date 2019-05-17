@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+// 리스트 1-1. 1-2에 동일한 스타일 적용
+// list_1인 li요소의 부모에 접근하는방식
+$(function(){
+	$("#list_1").parent().css("background-color", "yellow");
+});
+</script>
+</head>
+<body>
+	<h1>인접 관계 선택자</h1>
+	<ul id="wrap">
+		<li>리스트1
+			<ul>
+				<li id="list_1">리스트1-1</li>
+				<li>리스트1-2</li>
+			</ul>
+		</li>
+		<li>리스트2</li>
+		<li>리스트3</li>
+	</ul>
+</body>
+</html>

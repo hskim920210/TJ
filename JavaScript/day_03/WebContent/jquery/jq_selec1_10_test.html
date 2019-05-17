@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	// jquery 코드에도 자바스크립트 코드 가능하다.
+	// 이런 딕셔너리타입(맵타입)도 지원한다. (키 : 밸류)
+	var style_1 = {
+		"background-color":"#0ff",
+		"border":"2px solid #f00"
+	}
+	var style_2 = {
+		"background-color":"#ff0",
+		"border":"2px dashed #f00"
+	}
+	
+	// prev, next는 같은 depth에 있는 것 끼리 가능 보통 구조를 알 때
+	// .txt클래스 바로 이전을 지칭하기. 즉 내용 1이 지정된다.
+	$(".txt").prev().css(style_1);
+	
+	// .txt 클래스 바로 다음의 p태그에 적용
+	$(".txt + p").css(style_2);
+	
+	// .next()는 다음 요소를 지정하는 메소드
+	$(".txt").next().next().css(style_2);
+
+});
+</script>
+</head>
+<body>
+	<div id="wrap">
+			<h1>인접 관계 선택자</h1>
+			<p>내용1</p>
+			<p class="txt">내용2</p>
+			<p>내용3</p>
+			<p>내용4</p>
+	</div>
+</body>
+</html>

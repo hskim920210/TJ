@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 탐색 선택자 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	// find 메소드.
+	
+	
+	// 내용1 텍스트가 있는걸 선택하고 싶다 => p:contains(찾고자 하는 내용) 실제 텍스트를 비교할 수 있따.
+	// has 메소드. : 찾고자하는 태그를 찾아준다. p:has(찾고자 하는 태그)
+	$("#inner_1 p:contains(내용1)").css("color", "red");
+	$("#inner_1 p:has(strong)").css("color", "blue");
+
+	// 첫번째가 아닌것에 바이올렛을 하겠다.
+	// $("#inner_2 p").not(":first").css("color", "violet");
+	
+	// inner_2가 아이디인 곳에 있는 inner_2_a 클래스의 색을 바이올렛으로 하겠다.
+	// end는 방금전에 선택된걸 끝내겠다.
+	// end 쓰면 성능면에선 좋다
+	$("#inner_2").find(".inner_2_a").css("color", "violet").end().find(".inner_2_c").css("color", "lime");
+	
+});
+</script>
+</head>
+<body>
+	<div id="outer_wrap">
+		<h1>콘텐츠 탐색 선택자</h1>
+		<section id="inner_1">
+			<h1>contains( ), contents( ), has( )</h1>
+			<p><span>내용1</span></p>
+			<p><strong>내용2</strong></p>
+			<p><span>내용3</span></p>
+		</section>
+		<section id="inner_2">
+			<h1>not( ), end( )</h1>
+			<p class = "inner_2_a">내용4</p>
+			<p class = "inner_2_b">내용5</p>
+			<p class = "inner_2_c">내용6</p>
+		</section>
+	</div>
+</body>
+</html>

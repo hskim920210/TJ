@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	
+	var numbers = [11, 5, 7, 22, 3];
+	
+	var tfNumbers = $(numbers).map(function(i, n) {
+		return n*2;
+	});
+	
+	console.log("tfNumbers : ", tfNumbers);
+	
+	var arr1 = [{
+		"area":"서울", 
+		"name":"무대리"
+		},{
+			"area":"부산", 
+			"name":"홍과장"
+		},{
+			"area":"대전", 
+			"name":"박사장"
+		},{
+			"area":"서울", 
+			"name":"빅마마"
+		}];
+	
+	// 지역이 서울인 사람만 가져오기
+	var tfArr1 = $.map(arr1, function (o, i) {
+		if( o.area == "서울" ){
+			return o;
+		}
+	})
+	console.log("tfArr1 : ", tfArr1);
+  
+});
+</script>
+</head>
+<body>
+</body>
+</html>

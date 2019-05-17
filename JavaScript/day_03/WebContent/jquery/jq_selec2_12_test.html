@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 탐색 선택자 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	// style="display:none" 인 것을 찾는다
+	// 숨겨진 것을 찾을 땐 hidden
+	$("#wrap p:hidden").css({
+		"display" : "block",
+		"background" : "red"
+	});
+	
+	// 드롭다운에 선택된것을 알고싶다.
+	// 안쪽에 있는 것 중 옵션에 선택된 것을 가져온다. 선택된 값을 val로 가져온다
+	var selected = $("#zone1 :selected").val();
+	console.log("selected -> ", selected);
+	
+	// 체크박스
+	var checked2 = $("#zone2 :checked").val();
+	console.log("checked2 -> ", checked2);
+	var checked3 = $("#zone3 :checked").val();
+	console.log("checked3 -> ", checked3);
+});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<p>내용1</p>
+		<!-- display none은 아예 공간까지 없어진다. -->
+		<p style="display:none">내용2</p>
+		<p>내용3</p>
+	</div>
+	<form action="#">
+		<p id="zone1">
+			<!-- select는 드롭다운 -->
+			<select name="course" id="course">
+					<option value="opt1">옵션1</option>
+					<option value="opt2" selected>옵션2</option>
+					<option value="opt3">옵션3</option>
+			</select>
+		</p>
+		<p id="zone2">
+				<input type="checkbox" name="hobby1" value="독서"> 독서
+				<input type="checkbox" name="hobby2" value="자전거"> 자전거
+				<input type="checkbox" name="hobby3" value="등산" checked> 등산
+		</p>
+		<p id="zone3">
+				<input type="radio" name="gender" value="male"> 남성
+				<input type="radio" name="gender" value="female" checked> 여성
+		</p>
+	</form>
+</body>
+</html>

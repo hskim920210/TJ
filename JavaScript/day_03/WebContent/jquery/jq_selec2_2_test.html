@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 탐색 선택자 </title>
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	// 가상 선택자 : even 은 짝수번째의 것을 적용
+	//			  odd 는 홀수번째의 것을 적용
+	// 			   단, 인덱스는 0부터 시작.
+	$("#menu li:even").css("background-color", "red");
+	$("#menu li:odd").css("background-color", "blue");
+});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul id="menu">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+	</ul>
+</body>
+</html>

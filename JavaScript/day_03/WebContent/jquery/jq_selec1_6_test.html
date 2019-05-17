@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	// tit 클래스는 2개이지만 h1 태그에 있는 tit에만 적용하기 위함
+	$("h1.tit").css("background-color", "yellow")
+	.css("border", "3px solid green")
+	.css("color", "red");
+});
+</script>
+</head>
+<body>
+	<h1 class="tit">제이쿼리</h1>
+	<h2>선택자</h2>
+	<h3 class="tit">직접 선택자</h3>
+</body>
+</html>

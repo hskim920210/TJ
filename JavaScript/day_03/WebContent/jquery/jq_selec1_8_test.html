@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+// id 속성이 wrap인 요소의 모든 하위 h1 태그의 배경색을 지정
+// 매번 .을 안찍고 아래처럼 해도 된다.
+$(function(){
+	$("#wrap h1").css({
+		"background-color": "yellow",
+		"border": "3px solid green",
+		"color": "silver"
+	});
+});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h1>인접 관계 선택자</h1>
+		<p>내용1</p>
+		<section>
+				<h1>하위 요소 선택자</h1>
+				<p>내용2</p>
+		</section>
+	</div>
+</body>
+</html>

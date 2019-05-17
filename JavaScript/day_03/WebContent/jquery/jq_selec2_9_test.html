@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 탐색 선택자 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	var arr1 = ["서울", "대전", "부산", "전주"];
+	var arr2 = ["한국", "미국", "일본", "중국"];
+	var obj = {
+			"name":"정부장", 
+			"area":"서울"
+	}
+	
+	// "서울"이란 값이 arr1에 있냐
+	var idxNum = $.inArray("서울", arr1);
+	console.log("idxNum -> ", idxNum);
+	
+	// "인천"이란 값이 arr1에 있냐
+	// 없으면 -1 출력
+	var idxNum = $.inArray("인천", arr1);
+	console.log("idxNum -> ", idxNum);
+	
+	// arr1이 어레이냐
+	// 맞으니 true
+	var isArray1 = $.isArray(arr1);
+	console.log("isArray1 -> ", isArray1);
+	
+	// obj이 어레이냐
+	// obj는 맵타입이므로 false
+	var isArray2 = $.isArray(obj);
+	console.log("isArray2 -> ", isArray2);
+
+	
+	console.log("arr2 -> ", arr2);
+	// merge는 첫번째 매개변수로 전부 합쳐진다.
+	$.merge(arr2, arr1);
+	console.log("arr2 -> ", arr2);
+	
+});
+</script>
+</head>
+<body>
+</body>
+</html>

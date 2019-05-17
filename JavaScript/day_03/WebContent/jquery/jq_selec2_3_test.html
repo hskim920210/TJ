@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 탐색 선택자 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	// 특정 인덱스를 기준으로 탐색하는 방법.
+	// 내용 3을 기준으로 내용 1,2랑 4,5를 분리시키고 자기자신을 선택해보기도 하자
+	
+	// 인덱스값이 2인걸 찾아
+	$("#menu li").eq(2).css("color", "silver");
+	// lt(2)는 less than 2보다 작은요소만 가져오라 0과 1만 선택됨
+	$("#menu li:lt(2)").css("color", "aqua");
+	// gt(2)는 greater than 2보다 큰요소만 가져오라 3과 4만 선택됨
+	$("#menu li:gt(2)").css("color", "orange");
+	
+});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul id="menu">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+		<li>내용5</li>
+	</ul>
+</body>
+</html>

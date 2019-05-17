@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>부트 스트랩 테스트</title>
+<!-- 부트 스트랩을 사용하기 위한 link 태그 설정 -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- jquery를 사용하기 위한 script 태그 설정.
+	  부트스트랩을 포함한 다양한 라이브러리들은 jquery를 
+	  내부적으로 사용하기 때문에 아래와 같이 정의해줘야한다. -->
+<script type="text/javascript" src = "js/jquery.js"></script>
+<!-- jquery를 사용하여 구현된 라이브러리의 경우
+	  반드시 jquery를 먼저 선언한 이후, 아래와 같이 
+	 script 태그를 사용하여 선언해야한다. 
+	 ($ 연산자 사용을 위해서 ...) -->
+<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- Split button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-danger">Action</button>
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+
+
+
+</body>
+</html>

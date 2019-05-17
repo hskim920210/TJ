@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	var obj = [
+		{"area":"서울"},
+		{"area":"부산"},
+		{"area":"전주"}
+	];
+	
+	// 반복문 (포문 같은것. j쿼리에서 사용할 수 있는)
+	// 여러개 성분을 갖는 것에 대해 each()를 사용하면 obj 내부에 있는 각요소를 순회하겠다는 뜻
+	// 각 성분을 다 도니까 펑션의 인덱스 2개
+	$(obj).each(function (i, o) {
+		console.log(i + " : " + o.area);
+	});
+
+	console.log("==== The End 1 ====");
+	
+	$.each(obj, function (i, o) {
+		console.log(i + " : " + o.area);
+	});
+	
+	console.log("==== The End 2 ====");
+	
+	$("#menu1 li").each(function (i, o) {
+		console.log(i + " : " + o.innerHTML);
+		console.log(i + " : ", o);
+	});
+	
+	console.log("==== The End 3 ====");
+	
+	$.each($("#menu1 li"), function (i) {		
+		console.log(i + " : ", $(this));
+	});
+	
+	console.log("==== The End 4 ====");
+
+
+});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul id="menu1">
+			<li>내용1-1</li>
+			<li>내용1-2</li>
+			<li>내용1-3</li>
+	</ul>
+	<ul id="menu2">
+		<li>내용2-1</li>
+		<li>내용2-2</li>
+		<li>내용2-3</li>
+	</ul>
+</body>
+</html>

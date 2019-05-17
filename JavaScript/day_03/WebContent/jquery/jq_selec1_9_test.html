@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	$("#wrap > h1").css({
+		"background-color": "yellow",
+		"border": "3px solid green",
+		"color": "silver"
+	});
+	
+	// 상속되는 속성이 아닌 경우 section 하위요소들에 적용이 안될수있다.
+	// 하위요소를 모두 가리키는 children() 메소드 사용.
+	$("#wrap > section").children().css({
+		"color": "green"
+	});
+});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h1>인접 관계 선택자</h1>
+		<p>내용1</p>
+		<section>
+			<h1>자식 요소 선택자</h1>
+			<p>내용2</p>
+		</section>
+	</div>
+</body>
+</html>

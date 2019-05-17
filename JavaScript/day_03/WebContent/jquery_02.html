@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery</title>
+
+<script type="text/javascript" src = "js/jquery.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+function setH1() {
+	$("h1").css("color", "red");
+}
+
+function setH2() {
+	$("h2").css("color", "green");
+}
+
+
+	// $(document)는 현재문서를 지칭
+	$(document).ready( function() {
+		setH1();
+	} );
+	
+	// 이렇게 해도 위와 같은 효과.
+	$( function() {
+		setH2();
+	} );
+</script>
+
+<h1>Hello JQuery ~ !</h1>
+<h2>Hello JQuery ~ !</h2>
+
+</body>
+</html>

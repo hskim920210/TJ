@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	// $(".txt1").parents("div").css("border", "2px dashed blue");
+	// closest() : 부모 요소 검색을 위한 메소드
+	// 				매개변수로 지정된 첫번째 부모만 반환
+	$(".txt1").closest("div").css("border", "2px dashed blue");
+	// $(".txt1").parent().css("border", "2px dashed blue"); 와 똑같음( 지금 상황에서는 )
+});
+</script>
+</head>
+<body>
+	<h1 class="title">선택자</h1>
+	<div>
+		<div>
+			<p class="txt1">내용</p>
+		</div>
+	</div>
+</body>
+</html>
