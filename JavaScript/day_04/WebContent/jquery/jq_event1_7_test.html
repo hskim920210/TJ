@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function( ) {
+	// mouseout 이벤트는 하위요소를 인지하는 방식
+	// 하위 요소의 영역으로 진입하는 순간에도 이벤트가 동작한다.
+	$("#box_1").css("border", "2px solid");
+	$("#box_1").on("mouseout", function () {
+		// 자식요소에 올라가면 마우스가 빠져나갔다고 인식을 해버린다.
+		$(this).css("background-color", "yellow");
+	});
+	
+	// mouseleave 이벤트는 하위요소를 인지하지 않는 방식
+	// 실제 자신의 영역을 벗어나야만 이벤트가 동작
+	$("#box_2").css("border", "2px solid");
+	$("#box_2").on("mouseleave", function () {
+		// 자식요소까지 같은 영역으로 인식한다.
+		$(this).css("background-color", "pink");
+	});
+});
+</script>
+</head>
+<body>
+<h1>mouseout</h1>
+<div id="box_1">
+				<p><a href="#">내용1</a></p>
+				<p><a href="#">내용2</a></p>
+				<p><a href="#">내용3</a></p>
+</div>
+
+<h1>mouseleave</h1>
+<div id="box_2">
+				<p><a href="#">내용4</a></p>
+				<p><a href="#">내용5</a></p>
+				<p><a href="#">내용6</a></p>
+</div>
+</body>
+</html>

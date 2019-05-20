@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../../js/jquery.js"></script>
+<script>
+var dan = 2;
+
+$(function( ) {
+	$("#btnGuGuDan").on("click", function() {
+		var content = "<table>";
+		content += "<tr><th colspan='2'>" + dan + " 단</th></tr>";
+		for(var i = 1 ; i < 10 ; i++ ) {
+			content += "<tr>";
+			content += "<td>" + dan + " * " + i + " = </td>";
+			content += "<td>" + (dan * i) + "</td>";
+			content += "</tr>";
+		}
+		
+		content += "</table>";
+		
+		$("#contents").append(content);
+		dan += 1;
+		
+		var btnTop = $(this).offset().top;
+		$(window).scrollTop(btnTop);
+	});
+});
+</script>
+</head>
+<body>
+
+<div id="contents">
+</div>
+
+<div><button id="btnGuGuDan">구구단 출력</button></div>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function( ){
+	// strong 자식을 갖는 부모를 삭제하는 메소드
+	// unwrap 메소드는 특정 문서 요소의 부모 태그(요소)를 삭제하는 메소드
+	$("strong").unwrap();
+	
+	// h2 부모가 따로따로 요소마다 감싼다.
+	// wrap 메소드는 특정 문서 요소의 부모태그 (요소)를 지정하는 메소드
+	// 선택자로 지정된 각 문서 요소마다 부모가 생성
+	$(".ct1").wrap("<h2>");
+	// 위와 같은 코드 $(".ct1").wrap("<h2 />");
+	
+	// div 부모가 요소들을 하나로 감싼다.
+	// wrapAll 메소드는 특정 문서 요소의 부모태그 (요소)를 지정하는 메소드
+	// 선택자로 지정된 각 문서 요소가 연결되어 있는 경우 하나의 부모로 통합
+	$(".ct2").wrapAll("<div>");
+	
+	// li태그 안쪽에 있는거를 h2로 감싼다.
+	// wrapInner 메소드는 특정 문서 요소의 하위 요소에 대해 부모태그(요소)를 지정하는 메소드
+	$("li").wrapInner("<h2>");
+	
+});
+</script>
+<style>
+	div{background-color:aqua;}
+</style>
+</head>
+<body>
+	<h1 id="tit_1">
+	<strong>객체 조작 및 생성</strong>
+	</h1>
+	<p class="ct1">내용1</p>
+	<p class="ct1">내용2</p>
+	<p class="ct2">내용3</p>
+	<p class="ct2">내용4</p>
+	<ul>
+		<li>내용3</li>
+		<li>내용4</li>
+	</ul>
+</body>
+</html>

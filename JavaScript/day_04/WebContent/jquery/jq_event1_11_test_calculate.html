@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+
+var res;
+
+$(function () {
+	$("#btnResult").on("click", function () {
+		var n1 = parseFloat($("#n1").val().trim());
+		var n2 = parseFloat($("#n2").val().trim());
+		var operator = $("#operator").val();
+		
+		if(operator == "plus"){
+			res = n1 + n2;
+		} else if (operator == "minus"){
+			res = n1 - n2;
+		} else if (operator == "multiple"){
+			res = n1 * n2;
+		} else if (operator == "divide"){
+			res = n1 / n2;
+		} else if (operator == "mod"){
+			res = n1 % n2;
+		}
+		
+		$("#result").text("계산 결과는 " + res + " 입니다.");
+	});
+});
+</script>
+	
+</head>
+<body>
+
+<label>숫자 1 :
+<input type = "text" id = "n1" name = "n1" size = "5">
+</label>
+
+<label>연산자 :
+<select id = "operator">
+	<option selected value = "plus">+</option>
+	<option value = "minus">-</option>
+	<option value = "multiple">*</option>
+	<option value = "divide">/</option>
+	<option value = "mod">%</option>
+</select>
+</label>
+
+<label>숫자 2 :
+<input type = "text" id = "n2" name = "n2" size = "5">
+</label>
+
+<button id = "btnResult">결과 확인</button>
+
+<p id = "result"></p>
+
+</body>
+</html>

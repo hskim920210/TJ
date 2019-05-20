@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>
+<script src="../js/jquery.js"></script>
+<script>
+$(function( ) {
+	// 버튼 클릭시 내용 1의 색을 바꾼다
+	$(".btn1").click(function () { $(".btn1").parent().next().css("color","red"); });
+	
+	// on : 이벤트를 등록할 수 있는 메소드
+	// 특정 문서 요소에 이벤트를 등록할 수 있는 on 메소드
+	// $(선택자).on("처리할 이벤트", 이벤트 발생시 실행할 함수)
+	// $(선택자).on({"처리할 이벤트" : 이벤트 발생시 실행할 함수, ...})
+	$(".btn2").on({
+		"mouseover focus" : function () { $(".btn2").parent().next().css("color","blue"); },
+		"mouseout blur" : function () { $(".btn2").parent().next().css("color","green"); }	   
+	});
+	
+	// 이벤트의 강제 발생
+	$(".btn1").click();
+	$(".btn2").trigger("focus");
+});
+</script>
+</head>
+<body>
+	<p>
+	<button class="btn1">버튼1</button>
+	</p>
+	<p>내용1</p>
+	<p>
+		<button class="btn2">버튼2</button>
+	</p>
+	<p>내용2</p>
+</body>
+</html>

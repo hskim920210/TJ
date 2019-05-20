@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function( ) {
+	// 클릭을 직접 쓰는 경우는 별로없다. 대체로 on을 씀
+	$(".btn1").on("click", function () {
+		$(".txt1").css("background-color", "red");
+	});
+	
+	$(".btn2").on("click", function (e) {
+		// 연결된 이벤트의 실행을 중지하는 preventDefault 메소드
+		// a 태그에 클릭 이벤트를 처리하는 경우 href에 지정된 URL로 이동하게 된다.
+		// 만약 특정 조건에 의해 href 경로로 이동하지 않고자 하는 경우
+		// 아래와 같이 preventDefault 메소드를 호출할 수 있다.
+		e.preventDefault();
+		$(".txt2").css("background-color", "blue");
+	});
+	
+	$(".btn3").on("dblclick", function () {
+		$(".txt3").css("background-color", "yellow");
+	});
+});
+</script>
+</head>
+<body>
+	<p><a href="http://www.easyspub.co.kr/" class="btn1">버튼1</a></p>
+	<p class="txt1">내용1</p>
+	<p><a href="http://www.easyspub.co.kr/" class="btn2">버튼2</a></p>
+	<p class="txt2">내용2</p>
+	<p><button class="btn3">버튼3</button></p>
+	<p class="txt3">내용3</p>
+</body>
+</html>

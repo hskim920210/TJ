@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../../js/jquery.js"></script>
+<script>
+$(function() {
+	$("#btnResult").on("click", function() {
+		var n1 = $("#n1").val().trim();
+		if( !n1 ) {
+			alert("첫 번째 숫자를 입력하세요");
+			$("#n1").focus();
+			return;
+		}
+		
+		var n2 = $("#n2").val().trim();
+		if( !n2 ) {
+			alert("두 번째 숫자를 입력하세요");
+			$("#n2").focus();
+			return;
+		}			
+		
+		var num1 = parseFloat(n1);
+		var num2 = parseFloat(n2);
+		var r = num1;
+		
+		var op = $("#operator option:selected").text().trim();
+		if( op == "+" )
+			r += num2;
+		else if( op == "-" )
+			r -= num2;
+		else if( op == "*" )
+			r *= num2;
+		else if( op == "/" )
+			r /= num2;
+		else if( op == "%" )
+			r %= num2;
+		else {
+			alert("연산자를 선택하세요");
+			$("#operator").focus();
+			return;
+		}
+		
+		$("#result").text(r);
+			
+		
+		
+	});
+	
+});
+</script>
+</head>
+<body>
+
+<label>숫자1 : 
+<input type="text" id="n1" name="n1" size="5">
+</label>
+
+<label>연산자 :
+<select id="operator">
+	<option selected>+</option>
+	<option>-</option>
+	<option>*</option>
+	<option>/</option>
+	<option>%</option>
+</select>
+</label>
+
+<label>숫자2 : 
+<input type="text" id="n2" name="n2" size="5">
+</label>
+
+<button id="btnResult">결과 확인</button>
+
+<p id="result"></p>
+
+</body>
+</html>
+
+
+
+
+

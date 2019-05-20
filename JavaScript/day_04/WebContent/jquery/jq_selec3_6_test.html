@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function( ){
+	// height 메소드는 특정 문서요소의 높이 값을 반환하거나 설정하는 메소드
+	var h1 = $("#p1").height();
+	console.log(h1);
+	
+	// innerHeight 메소드는 패딩 영역의 값을 포함한 높이 값을 반환하거나 설정하는 메소드
+	// 마지막에 있는 테두리(보더)를 제외한 전체높이(패딩포함)은 innerHeight값을 가져오면 됨.
+	var h2 = $("#p1").innerHeight();
+	console.log(h2);
+	
+	// outerHeight 메소드는 패딩영역과 테두리의 값을 포함한 높이 값을 반환하거나 설정하는 메소드
+	// 보더까지 포함한 총 높이
+	var h3 = $("#p1").outerHeight();
+	console.log(h3);
+	
+	$("#p2").outerWidth("200");
+	$("#p2").outerHeight("200");
+});
+</script>
+<style>
+	*{padding: 0;}
+	#p1, #p2{
+		width: 100px;
+		height: 50px;
+		padding:20px;
+		border: 5px solid #000;
+		background-color: #ff0;
+	}
+</style>
+</head>
+<body>
+	<h1>수치 조작 메서드</h1>
+	<p id="p1">내용1</p>
+	<p id="p2">내용2</p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function( ){
+	// val 메소드는 특정 input 태그의 value 속성의 값을 추출하거나 설정할 수 있는 메소드.
+	var nameValue = $("#user_name").val();
+	console.log(nameValue);
+	
+	$("#user_name").val("JQuery");
+	
+	// prop 메소드는 특정 문서 요소의 속성값을 추출하거나 설정할 수 있는 메소드
+	// attr 메소드와 유사하지만, attr 메소드는 HTML 요소의 속성을 추출, 설정하는 것
+	// 반면, prop 메소드는 자바스크립트의 속성을 추출, 설정하는 것
+	var defaultValue = $("#user_id").prop("defaultValue");
+	console.log(defaultValue);
+	
+	// 문서에 기술된 #. 문서 자체의 속성
+	var attrValue = $("#form_1").attr("action");
+	// 실제로 내가 이동할 경로. 프로그램으로 처리할 정보를 그대로
+	var propValue = $("#form_1").prop("action");
+	console.log(attrValue);
+	console.log(propValue);
+});
+</script>
+</head>
+<body>
+	<h1>객체 조작 및 생성</h1>
+	<form action="#" id="form_1">
+		<p>
+			<label for="user_name">이름</label> 
+			<input type="text" name="user_name"
+				id="user_name" value="용대리">
+		</p>
+		<p>
+			<label for="user_id">아이디</label> 
+			<input type="text" name="user_id"
+				id="user_id" value="hello">
+		</p>
+	</form>
+</body>
+</html>

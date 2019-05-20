@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function( ){
+	// attr 메소드를 사용하여 checked 속성을 추출하는 경우 
+	// 아래의 아이디 chk1은 html 문서에 checked 속성이 존재하지 않기 때문에
+	// undefined 값이 반환
+	// 반면 prop 메소드는 자바 스크립트의 속성을 추출하므로
+	// boolean 타입인 false 값이 반환된다.
+	var check_state_1 = $("#chk1").attr("checked");
+	console.log(check_state_1);
+	check_state_1 = $("#chk1").prop("checked");
+	console.log(check_state_1);
+	
+	var check_state_2 = $("#chk2").attr("checked");
+	console.log(check_state_2);
+	check_state_2 = $("#chk2").prop("checked");
+	console.log(check_state_2);
+	
+	// chk3의 checked 속성을 attr 메소드를 사용하여 checked로 변경
+	// $("#chk3").attr("checked", "checked");
+	$("#chk3").prop("checked", true);
+	
+	
+	var selectedIndex = $("#se_1").prop("selectedIndex");
+	console.log(selectedIndex);
+	
+});
+</script>
+</head>
+<body>
+	<h1><strong>객체 조작 및 생성</strong></h1>
+	<form action="#" id="form_1">
+		<p>
+			<input type="checkbox" name="chk1" id="chk1">
+			<label for="chk1">chk1</label>
+			<input type="checkbox" name="chk2" id="chk2" checked>
+			<label for="chk2">chk2</label>
+			<input type="checkbox" name="chk3" id="chk3">
+			<label for="chk3">chk3</label>
+		</p>
+		<p>
+			<select name="se_1" id="se_1">
+				<option value="opt1">option1</option>
+				<option value="opt2">option2</option>
+				<option value="opt3" selected>option3</option>
+			</select>
+		</p>
+	</form>
+</body>
+</html>

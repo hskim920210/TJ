@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function( ){
+	var $txt1 = $(".txt_1 span"),
+				$txt2 = $(".txt_2 span"),
+				$box = $(".box");
+	
+	// 현재 문서를 기준으로 위치를 가져오는 offset
+	// 특정 문서 요소의 절대 좌표값을 반환하거나 설정할 수 있다.
+	var offset_t = $box.offset().top; 
+	// 부모를 기준으로 위치는 position 메소드
+	// 특정 문서 요소의 상대 좌표값을 반환하거나 설정할 수 있다.
+	var position_t = $box.position().top; 
+
+	$txt1.text(offset_t);
+	$txt2.text(position_t);
+});
+</script>
+<style>
+	*{margin:0;padding:0;}
+	#box_wrap{
+			width:300px;
+			height:200px;
+			margin:50px auto 0;
+			position: relative;
+			background-color:#ccc;
+	}
+	.box{
+			width:50px;height:50px;
+			/* 부모요소 기준으로 왼쪽 100 오른쪽 50 위해 absolute 쓴다. */
+			position:absolute;
+			left:100px;top:50px;
+			background-color:#f00;
+	}
+</style>
+</head>
+<body>
+	<div id="box_wrap">
+		<p class="box">박스</p>
+	</div>
+	<p class="txt_1">절대 top위칫값: <span></span></p>
+	<p class="txt_2">상대 top위칫값: <span></span></p>
+</body>
+</html>

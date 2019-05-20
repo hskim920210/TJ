@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function( ) {
+	var h0 = $(".img1").height();
+	console.log("h0 -> " + h0)
+	
+	$(document).ready(function () {
+		var h1 = $(".img1").height();
+		console.log("h1 -> " + h1);
+	});
+	
+	$(window).on("load",(function () {
+		var h2 = $(".img1").height();
+		console.log("h2 -> " + h2);
+	}));
+});
+</script>
+</head>
+<body>
+	<p>
+		<img src="https://img-wishbeen.akamaized.net/plan/1465579644774_23729044146_794a75b30b_k-1.jpg" class="img1">
+	</p>
+</body>
+</html>
