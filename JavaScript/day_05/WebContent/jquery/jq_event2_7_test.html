@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	// 거의 사용이 안되는 코드
+	// delegate 메소드는 특정 문서요소의 하위요소에 대해 이벤트를 등록하는 메소드
+	// 동적으로 이벤트 처리를 한다
+	// (현재는 on 메소드로 대체되어있다)
+	// delegate(하위 요소의 선택자-지금의 경우 btn_wrap 하위의 btn_1 같은, 이벤트, 처리함수;)
+	$(".btn_wrap").delegate(".btn_1.on", "mouseover focus", function() {
+		alert("Hello ~ !");
+	});
+	$(".btn_1").addClass("on");
+	
+	// .btn_2 해도 되지만 명시적으로
+	// undelegate 할 때는 delegate가 지정된 선택자를 가져와야함. 위에서 btn_wrap에 했으니 딱 그걸 집어줘야함
+	// delegate 메소드로 등록된 이벤트를 취소하는 코드
+	$(".btn_wrap button.btn_2").on("click", function() {
+		$(".btn_wrap").undelegate(".btn_1", "mouseover focus");
+	});
+	
+	// 이벤트를 딱 한번만 실행하고자
+	// 클릭 이벤트를 한번 실행한 후 취소하는 코드
+	// bind 메소드와 unbind 메소드를 활용
+	/*
+	$("#btn_2").bind("click", function(e) {
+		alert("버튼 클릭 ~ !");
+		$(this).unbind(e);
+	});
+	*/
+	
+	// one 메소드를 활용하는 방법
+	$("#btn_2").one("click", function(e) {
+		alert("버튼 클릭 ~ ! (one 메소드)");
+	});
+});
+</script>
+</head>
+<body>
+<div id="wrap">
+	<p class="btn_wrap">
+		<button class="btn_1">버튼1</button>
+		<button class="btn_2">버튼2</button>
+	</p>
+	<p><button id="btn_2">버튼2</button></p>
+</div>
+</body>
+</html>

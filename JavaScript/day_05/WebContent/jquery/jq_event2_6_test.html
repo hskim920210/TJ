@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	// 아주 중요한 내용 !!
+	// btn_1 클래스가 적용된 문서요소에 on 클래스 속성을 추가하세요
+	
+	// btn_1 클래스와 on 클래스가 적용된 문서요소를 선택하세요.
+	$(".btn_1.on").on("mouseover focus", function() {
+		alert(".btn_1.on!!");
+	});
+	// 이렇게 하면 순서때문에 이벤트 안됨	
+	$(".btn_1").addClass("on");
+	
+	// 동적으로 추가된 문서요소에 대한 이벤트 처리 방법
+	// on에 클래스를 넣는 경우 동적으로 이벤트를 처리하겠다는 의미가 된다.
+	$(document).on("mouseover focus", ".btn_2.on", function() {
+		alert(".btn_2.on!!");
+	});
+	
+	$(".btn_2").addClass("on");
+});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<p><button class="btn_1">버튼1</button></p>
+		<p><button class="btn_2">버튼2</button></p>
+	</div>
+</body>
+</html>

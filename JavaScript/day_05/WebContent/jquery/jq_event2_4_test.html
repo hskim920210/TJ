@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	// 키보드 이벤트 처리 위해 keydown 이벤트 처리
+	$(document).on("keydown", function(e) {
+		var msg = "";
+		
+		// e.keyCode로 눌린 키를 가져온다.
+		switch(e.keyCode) {
+			case 37:
+				msg = "LEFT"; break;
+				
+			case 38:
+				msg = "TOP"; break;
+				
+			case 39:
+				msg = "RIGHT"; break;
+				
+			case 40:
+				msg = "BOTTOM"; break;
+		};
+		
+		// 문자가 "" 비어있으면 false
+		if( msg ){
+			$("#user_id").val(msg);
+		};
+	});
+});
+</script>
+</head>
+<body>
+	<p><input type="text" name="user_id" id="user_id"></p>
+</body>
+</html>

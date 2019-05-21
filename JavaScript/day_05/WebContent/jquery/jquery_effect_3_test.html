@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 효과와 애니메이션 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	$(".txt1").animate({marginLeft : "300px"}, 3000);
+	$(".txt2").delay(3000).animate({marginLeft : "300px"}, 3000);
+	
+	$(".btn1").on("click",move);
+	function move() {
+		$(".txt3").animate({marginLeft : "+=50px"}, 1000);
+		
+		$(".txt4").animate({marginLeft : "+=50px"}, 1000);
+		$(".txt4").animate({marginLeft : "+=50px"}, 1000);
+		// stop은 모션을 중지시키는 기능
+		// 현재 문서 요소에서 실행중인 이벤트를 종료하는 메소드
+		// (이벤트 큐의 다음 이벤트는 제거하지 않음)
+		$(".txt4").stop();
+		
+		$(".txt5").animate({marginLeft : "+=50px"}, 1000);
+		$(".txt5").animate({marginLeft : "+=50px"}, 1000);
+		// stop(큐의 제거여부, 마지막효과의 결과적용여부)
+		// (현재 이벤트를 종료하고 큐에 이벤트가 남아있다면 없애라, 현재 이벤트가 marginLeft 효과 결과를 적용한다.)
+		$(".txt5").stop(false, true);
+	};
+});
+</script>
+<style>
+	p{width: 110px;text-align: center;}
+	.txt1{background-color: aqua;}
+	.txt2{background-color: pink;}
+	.txt3{background-color: orange;}
+	.txt4{background-color: green;}
+	.txt5{background-color: gold;}
+</style>
+</head>
+<body>
+	<p class="txt1">효과1</p>
+	<p class="txt2">효과2<br> delay(3000)</p>
+
+	<p><button class="btn1">50px 전진</button></p>
+	<p class="txt3">효과3</p>
+	<p class="txt4">효과4<br>stop( )</p>
+	<p class="txt5">효과5<br>stop(true, true)</p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+	// ID의 값이 btn1 인 문서 요소에 대해서 focus 이벤트를 처리하세요
+	// focus, blur // focusin, focusout
+	$("#btn1").on({
+		"focusin" : function () {$(this).css("background-color", "pink");},
+		"focusout" : function () {$(this).css("background-color", "lime");}
+	});
+	
+	// ID의 값이 btn2 인 문서 요소에 대해서 마우스감지 이벤트를 처리하세요
+	// mouseover, mouseout
+	// 이렇게 하면 마우스와 키보드로 잡히는 이벤트 모두 처리 가능
+	$("#btn2").on({
+		"mouseover focus" : function () {$(this).css("background-color", "silver");},
+		"mouseout blur" : function () {$(this).css("background-color", "gold");}
+	});
+	
+});
+</script>
+</head>
+<body>
+	<p><button id="btn1">버튼1</button></p>
+	<p><button id="btn2">버튼2</button></p>
+	<p class="txt"></p>
+</body>
+</html>
