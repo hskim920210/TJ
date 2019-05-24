@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>day_01</display-name>
+  <servlet>
+    <servlet-name>Servlet_01</servlet-name>
+    <servlet-class>tje.servlet.Servlet_01</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet_01</servlet-name>
+    <url-pattern>/s01</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlet_04</servlet-name>
+    <servlet-class>tje.servlet.Servlet_04</servlet-class>
+    <init-param>
+      <param-name>USER_ID</param-name>
+      <param-value>root</param-value>
+    </init-param>
+    <init-param>
+      <param-name>USER_PW</param-name>
+      <param-value>SystemManager304</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet_04</servlet-name>
+    <url-pattern>/s04</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlet_06</servlet-name>
+    <servlet-class>tje.servlet.Servlet_06</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet_06</servlet-name>
+    <url-pattern>/s06</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 화면</title>
+</head>
+<body>
+
+<!-- ./으로 해야 day_01이 남는 주소로 간다. 
+		현재 위치를 바꿔주는 것
+		/로 하면 localhost:8080/ 까지만 되서 프로젝트 이름이 사라짐 -->
+<form action = "./login" method=post>
+<table>
+	<caption>로그인</caption>
+	<tr>
+		<th>ID</th>
+		<!-- 
+			form 태그를 사용하여 서버로 데이터를 전송하는 경우 
+			input 태그의 name 속성의 값은 request.getParameter에 사용되는 키값이 된다.
+			-->
+		<td><input type = "text" name = "id"></td>
+	</tr>
+	<tr>
+		<th>PASSWORD</th>
+		<!-- 
+			form 태그를 사용하여 서버로 데이터를 전송하는 경우 
+			input 태그의 name 속성의 값은 request.getParameter에 사용되는 키값이 된다.
+			-->
+		<td><input type = "password" name = "password"></td>
+	</tr>
+	<tr>
+		<!-- 
+			form 태그를 사용하여 서버로 데이터를 전송하는 경우 
+			input 태그의 name 속성의 값은 request.getParameter에 사용되는 키값이 된다.
+			-->
+		<th colspan="2"><input type = "submit" value = "로그인"> <input type = "reset" value = "초기화"> </th>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>
