@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계산 화면</title>
+</head>
+<body>
+
+<h2>계산 수식 입력 화면</h2>
+
+<form action="../calculator" method="post">
+	<table>
+		<tr>
+			<th>NUM1</th>
+			<th>OP</th>
+			<th>NUM2</th>
+			<th rowspan="2"><input type="submit" value="실행"></th>
+		</tr>
+		<tr>
+			<td><input type="text" name="num1" required></td>
+			<td>
+				<select name="op">
+					<option value="+" selected>+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+					<option value="%">%</option>
+				</select>			
+			</td>
+			<td><input type="text" name="num2" required></td>			
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

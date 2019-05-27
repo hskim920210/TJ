@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>두 숫자의 연산</title>
+</head>
+<body>
+
+<form action = "./calc" method = "get">
+	<!-- required를 주면 꼭 입력을 받도록 한다. -->
+	<p>n1 : <input type = "text" name = "x" required></p>
+	<p>n2 : <input type = "text" name = "y" required></p>
+	<p>연산자 : <select name = "op">
+				<option value = "choice" name = "choice">연산자 선택</option>
+				<option value = "plus" name = "plus">+</option>
+				<option value = "minus" name = "minus">-</option>
+				<option value = "mult" name = "mult">*</option>
+				<option value = "divi" name = "divi">/</option>
+				</select></p>
+	<p><input type = "submit" value = "계산 결과 보기 " name = "result"></p>
+</form>
+
+</body>
+</html>
