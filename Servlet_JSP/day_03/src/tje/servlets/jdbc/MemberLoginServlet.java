@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,8 +27,53 @@ public class MemberLoginServlet extends HttpServlet {
 	private static final String jdbc_id = "root";
 	private static final String jdbc_password = "SystemManager304";
 	private static final String formPage = "/WEB-INF/pages/loginPage.html";
+	private static final String jspPage = "/MemberLoginJSP.jsp";
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		
+		// 쿠키 여부 확인
+		Cookie [] cookies = request.getCookies();
+		
+//		String save_id = null;
+//		for(int i = 0 ; cookies != null && i < cookies.length ; i++) {
+//			if(cookies[i].getName().equals("save_id")) {
+//				save_id = cookies[i].getValue();
+//			}
+//		} 
+		
+		if(cookies != null) {
+			RequestDispatcher rd = request.getRequestDispatcher(jspPage);
+			rd.forward(request, response);
+		}
+
+		
+//		StringBuilder buffer = new StringBuilder();
+//		buffer.append("<form action=\"./member_login\" method=\"post\">");
+//		buffer.append("<table>");
+//		buffer.append("<caption>로그인</caption>");
+//		buffer.append("<tr>");
+//		buffer.append("<th>ID</th>");
+//		buffer.append("<th>PW</th>");
+//		buffer.append("</tr>");
+//		buffer.append("<tr>");
+//		buffer.append("<td><input type=\"text\" name=\"id\" required></td>");
+//		buffer.append("<td><input type=\"password\" name=\"password\" required></td>");
+//		buffer.append("</tr>");
+//		buffer.append("<tr>");
+//		buffer.append("<th colspan=\"2\"><input type=\"submit\" value=\"로그인\"></th>");
+//		buffer.append("</tr>");
+//		buffer.append("<tr>");
+//		buffer.append("<th colspan=\"2\"><label>아이디 저장<input type = \"checkbox\" name = \"save_id\"></label></th>");
+//		buffer.append("</tr>");
+//		buffer.append("</table>");
+//		buffer.append("</form>");
+//		buffer.append("<form action = \"./member_main\" method=\"get\">");
+//		buffer.append("<p><input type = \"submit\" value = \"메인으로\"></p>");
+//		buffer.append("</form>");
+		
+		
+		
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("login_id");
 		String name = (String)session.getAttribute("login_name");
@@ -42,8 +88,9 @@ public class MemberLoginServlet extends HttpServlet {
 			return;
 		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher(formPage);
-		rd.forward(request, response);
+		// RequestDispatcher rd = request.getRequestDispatcher(formPage);
+//		RequestDispatcher rd = request.getRequestDispatcher(formPage);
+//		rd.forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -103,6 +150,28 @@ public class MemberLoginServlet extends HttpServlet {
 			session.setAttribute("login_name", name);
 			out.println("<input type = \"button\" value = \"메인으로\" onclick = \"location.href='./member_main'\">");
 			
+			
+			Integer count = Integer.parseInt((String)request.getServletContext().getAttribute("count"));
+			request.getServletContext().setAttribute("count", "" + (count+1));
 		}
+		
+		// 로그인 아이디 저장을 위한 쿠키 생성
+		String save_id = request.getParameter("save_id");
+		if (save_id != null) {
+			Cookie cookie = new Cookie("save_id", strId);
+			// 클라이언트에게 전송하는 응답 흐름에 쿠키 객체를 추가
+			// (클라이언트의 웹 브라우저에 쿠키가 저장된다.
+			response.addCookie(cookie);
+		} else if (save_id == null) {
+			// 키값이 save_id인 쿠키를 생성한 뒤에 0초뒤에 관련된 쿠키를 지워버린다.
+			Cookie cookie = new Cookie("save_id", "");
+			// 0초 뒤에 쿠키가 삭제된다.
+			cookie.setMaxAge(0);
+			// 클라이언트에게 전송하는 응답 흐름에 쿠키 객체를 추가
+			// (클라이언트의 웹 브라우저에 쿠키가 저장된다.
+			response.addCookie(cookie);
+		}
+		
+		
 	}
 }

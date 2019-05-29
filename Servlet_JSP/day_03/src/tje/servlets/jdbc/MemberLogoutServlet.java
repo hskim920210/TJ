@@ -36,6 +36,9 @@ public class MemberLogoutServlet extends HttpServlet {
 		out.println("<h2>로그아웃</h2>");
 		out.println("<h4>" + name + " 님의 로그아웃 요청이 처리되었습니다.</h4>");
 		out.println("<input type = \"button\" value = \"메인으로\" onclick = \"location.href='./member_main'\">");
+		
+		Integer count = Integer.parseInt((String)request.getServletContext().getAttribute("count"));
+		request.getServletContext().setAttribute("count", "" + (count-1));
 	}
 
 }

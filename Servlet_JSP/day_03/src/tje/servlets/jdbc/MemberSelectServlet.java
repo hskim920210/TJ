@@ -32,40 +32,28 @@ public class MemberSelectServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		java.io.PrintWriter out = response.getWriter();
-		out.print("post");
 		
 		try {
 			Connection conn = DriverManager.getConnection(jdbc_url, jdbc_id, jdbc_password);
 			String sql = "select * from member";
-			String sql_tot = "select count(*) from member";
 			Statement stmt = conn.createStatement();
-			Statement stmt_tot = conn.createStatement();
 			ResultSet rs = null;
-			ResultSet rs_tot = null;
 			rs = stmt.executeQuery(sql);
-			rs_tot = stmt.executeQuery(sql_tot);
-			int rowCount = 0;
-			
-			while(rs_tot.next()) {
-				rowCount = rs_tot.getInt(1);
-			}
+
 			
 			while (rs.next()) {
-				out.println(rs.getString("id") + rs.getString("name"));
-				out.flush();
+				out.println("회원 ID : " + rs.getString("id") + " / 회원 이름 : " + rs.getString("name") + "</br>");
 			}
-			
+			out.println("<input type = \"button\" value = \"메인으로\" onclick = \"location.href='./member_main'\">");
 			rs.close();
-			rs_tot.close();
 			stmt.close();
-			stmt_tot.close();
 			conn.close();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 }
