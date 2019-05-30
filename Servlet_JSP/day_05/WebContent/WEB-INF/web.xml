@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>day_05</display-name>
+  
+  <context-param>
+  	<param-name>JDBC_USER</param-name>
+  	<param-value>root</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>JDBC_PASSWORD</param-name>
+  	<param-value>SystemManager304</param-value>
+  </context-param>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/jsp_20.jsp</location>
+  </error-page>
+
+  <error-page>
+  	<exception-type>java.lang.NumberFormatException</exception-type>
+  	<location>/jsp_22.jsp</location>
+  </error-page>
+  
+</web-app>
