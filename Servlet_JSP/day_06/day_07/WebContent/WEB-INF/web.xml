@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>day_07</display-name>
+  
+  <context-param>
+  	<param-name>JDBC_URL</param-name>
+  	<param-value>jdbc:mysql://localhost:3306/test?serverTimezone=UTC</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>JDBC_ID</param-name>
+  	<param-value>root</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>JDBC_PASSWORD</param-name>
+  	<param-value>SystemManager304</param-value>
+  </context-param>
+  
+  <servlet>
+  	<servlet-name>JDBCDriverLoader</servlet-name>
+  	<servlet-class>tje.jdbc.JDBCDriverLoader</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+</web-app>
