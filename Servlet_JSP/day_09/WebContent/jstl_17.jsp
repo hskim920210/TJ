@@ -21,32 +21,19 @@
 	pageContext.setAttribute("map", map);
 %>
 
-<h2>맵의 내용 출력</h2>
-
-<%-- 
-특정 리스트, 맴을 순회하기 위한 c:forEach 태그
+<h2>리스트의 내용 출력</h2>
+<!-- 
+특정 리스트, 맵을 순회하기 위한 c:forEach 태그
 - Map 객체를 순회하는 경우 var 속성에 정의된 이름의 객체에
-  key와 value 를 사용할 수 있습니다.
---%>
+  key와 value를 사용할 수 있다.
+-->
 
-<%-- value 의 값이 짝수인 경우만 출력 --%>
+<!-- value의 값이 짝수인 경우만 출력 -->
 <c:forEach var="data" items="${map}" varStatus="status">
-	<c:if test="${ data.value mod 2 eq 0 }">
-		<h3>${ status.count } : ${ data.key } - ${ data.value }</h3>
-	</c:if>	
-</c:forEach>
-
+<c:if test="${ data.value mod 2 eq 0 }">
+	<h3>${ status.count } : ${ data.key } - ${ data.value }</h3>
+</c:if>
+</c:forEach> 
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

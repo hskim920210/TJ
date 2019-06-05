@@ -9,9 +9,11 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-public class CharacterEncodingFilter implements Filter {
-	private String strEncoding;
 
+public class CharacterEncodingFilter implements Filter {
+	
+	private String strEncoding;
+	
 	public void init(FilterConfig filterConfig) throws ServletException {
 		strEncoding = filterConfig.getInitParameter("encoding");
 		System.out.println(strEncoding);
@@ -19,10 +21,9 @@ public class CharacterEncodingFilter implements Filter {
 	}
 	
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-
+		
 		System.out.println("CharacterEncodingFilter 실행");
 		request.setCharacterEncoding(strEncoding);
-		
 		chain.doFilter(request, response);
 		
 	}

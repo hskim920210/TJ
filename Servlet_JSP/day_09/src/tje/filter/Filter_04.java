@@ -10,13 +10,13 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
+
 @WebFilter(dispatcherTypes = {DispatcherType.FORWARD }
 					, urlPatterns = { "/fs_04" })
 public class Filter_04 implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-
-		System.out.println("Filter_04 실행");		
+		System.out.println("Filter_04 실행");
 		chain.doFilter(request, response);
 	}
 

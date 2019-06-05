@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/fs_02")
 public class FilterServlet_02 extends HttpServlet {
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		String name = request.getParameter("name");
 		
 		PrintWriter out = response.getWriter();
@@ -19,6 +17,7 @@ public class FilterServlet_02 extends HttpServlet {
 		out.println(name);
 		out.println("</h3>");
 		
+		
 	}
-
+	
 }

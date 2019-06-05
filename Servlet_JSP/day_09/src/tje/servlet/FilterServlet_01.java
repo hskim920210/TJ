@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/fs_01")
 public class FilterServlet_01 extends HttpServlet {
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("FilterServlet_01의 doGet 메소드 실행");
 	}
-
+	
 }
