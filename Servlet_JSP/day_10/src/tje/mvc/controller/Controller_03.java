@@ -15,7 +15,7 @@ import tje.mvc.service.ByeService;
 import tje.mvc.service.HelloService;
 import tje.mvc.service.Service;
 
-@WebServlet("/*.do3")
+@WebServlet("*.do3")
 public class Controller_03 extends HttpServlet {	
 	private HashMap<String, Service> map = new HashMap<>();
 	

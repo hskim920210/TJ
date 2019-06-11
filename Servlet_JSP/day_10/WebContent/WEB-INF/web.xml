@@ -37,6 +37,9 @@
   <listener>
     <listener-class>tje.listener.Listener_01</listener-class>
   </listener>
+  <listener>
+    <listener-class>tje.listener.Listener_02</listener-class>
+  </listener>
   <context-param>
     <param-name>save_dir</param-name>
     <param-value>save</param-value>

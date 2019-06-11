@@ -2,11 +2,9 @@ package tje.listener;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
 import java.io.*;
 
 //방문자 수를 저장 및 로드할 수 있는 리스너 객체
-@WebListener
 public class Listener_02 implements ServletContextListener {
 	
 	// 파일에 저장되어 있는 방문자 수를 읽어와
@@ -18,7 +16,7 @@ public class Listener_02 implements ServletContextListener {
 		File dir = new File(sce.getServletContext().getRealPath(strDirPath));
 		if( !dir.exists() )
 			dir.mkdirs();
-		
+		// System.out.println(sce.getServletContext().getRealPath(strDirPath));
 		File file = new File(dir, strFilePath);
 		
 		try (BufferedReader in = 

@@ -43,15 +43,18 @@ public class Controller_01 extends HttpServlet {
 	}	
 	private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/*
-		String requestURI = request.getRequestURI();
 		System.out.println(requestURI);
 		System.out.println(requestURI.substring(request.getContextPath().length()));
 		*/
 		// 클라이언트의 요청 URI를 추출하여 변수로 저장
+		// request.getRequestURI() 는 /day_10/*.do1
+		// request.getContextPath() 는 /day_10 이므로
+		// 아래의 requestURI는 /*.do1 이다.
 		String requestURI = 
 				request.getRequestURI().substring(
 						request.getContextPath().length());
 		
+		System.out.println(requestURI);
 		String viewPage = null;
 		if( requestURI.equals("/hello.do1") ) {
 			request.setAttribute("HelloMsg", "안녕하세요~!");
