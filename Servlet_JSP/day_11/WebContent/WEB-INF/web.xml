@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>day_11</display-name>
+  <context-param>
+    <param-name>JDBC_DRIVER</param-name>
+    <param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>JDBC_URL</param-name>
+    <param-value>jdbc:mysql://localhost:3306/test?serverTimezone=UTC</param-value>
+  </context-param>
+  <context-param>
+    <param-name>JDBC_USER</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>JDBC_PASSWORD</param-name>
+    <param-value>SystemManager304</param-value>
+  </context-param>
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>tje.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>MainController</servlet-name>
+    <servlet-class>tje.controller.MainController</servlet-class>
+    <init-param>
+      <param-name>ConfigFile</param-name>
+      <param-value>/WEB-INF/conf/mappings.properties</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MainController</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+</web-app>
