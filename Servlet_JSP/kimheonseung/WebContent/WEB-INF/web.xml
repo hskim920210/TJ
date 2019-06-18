@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>kimheonseung</display-name>
+  <context-param>
+    <param-name>POOL_CONFIG</param-name>
+    <param-value>
+  		JDBC_DRIVER=com.mysql.cj.jdbc.Driver
+  		JDBC_URL=jdbc:mysql://localhost:3306/kkh?serverTimezone=UTC
+  		JDBC_USER=root
+  		JDBC_PASSWORD=SystemManager304
+  		VALIDATION_QUERY=select 1
+  		MIN_IDLE=3
+  		MAX_TOTAL=30
+  		POOL_NAME=kkh
+  	</param-value>
+  </context-param>
+  <listener>
+    <listener-class>khs.jdbc.listener.DBCPInitListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>MainController</servlet-name>
+    <servlet-class>khs.controller.MainController</servlet-class>
+    <init-param>
+      <param-name>ConfigFile</param-name>
+      <param-value>/WEB-INF/conf/mappings.properties</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MainController</servlet-name>
+    <url-pattern>*.khs</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>CharacterFilter</filter-name>
+    <filter-class>khs.util.CharacterFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+</web-app>
