@@ -1,0 +1,11 @@
+p.32
+-maven 의존설정. spring-context : boot에서는 따로따로 정할필요없다.
+-pom.xml의 24번째 줄 <artifactId>spring-boot-starter</artifactId>
+	이거를 불러옴으로써 다 해결된다.
+-교재와 같이 따로따로 다 설정해줄 필요가 없다는 의미
+-지금은 springboot으로 해서 별 설정 필요 없는데
+-기존의 legacy로 하면 설정을 좀 해줘야함
+
+
+MemberRequestUsingDI에서 리소스 추가
+resources - new - other .. - spring - spring bean configuration file
