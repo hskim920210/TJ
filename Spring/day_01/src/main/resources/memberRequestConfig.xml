@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 스프링 컨테이너 구축을 위한 설정 파일 -->
+	<!-- 스프링 빈을 선언하는 파일 -->
+	<!-- 스프링 빈 : 일반 자바 클래스의 객체 -->
+	<!-- beans 태그 내부에 모든 내용을 작성 -->
+	<!-- bean 태그를 사용하여 스프링 빈을 선언할 수 있다. -->
+	<!-- 멤버 리퀘스트객체가 불릴때 멤버를 세팅하는거 자동으로 -->
+	<!-- id는 변수명. 아래는 객체를 만드는 코드 property name은 필드명을 정해준다. -->
+	
+	<!-- 아래는 Member member = new Member(); -->
+	<!-- 		member.setName("DEF"); -->
+	<!-- 		member.setAge(33); -->
+	<!-- 		을 하는것과 같은 코드이다. -->
+	<bean id="member" class="com.tje.Member">
+		<property name="name">
+			<value>김헌승</value>
+		</property>
+		<property name="age" value="28"/>
+	</bean>
+	
+	<!-- constructor-arg는 생성자의 매개변수. name에는 매개변수로 들어갈 이름 -->
+	<!-- 아래는 MemberRequestUsingDI memberRequest = new MemberRequestUsingDI(member); -->
+	<!-- 위에 만들어놓은 bean의 id와 맞춰주는것이다. -->
+	<bean id="memberRequest" class="com.tje.MemberRequestUsingDI">
+		<constructor-arg name="member" ref="member"/>
+	</bean>
+</beans>

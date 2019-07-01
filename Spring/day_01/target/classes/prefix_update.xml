@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- namespaces c,p를 추가 -->
+	<!-- 스프링 빈 객체를 생성 시, 네임스페이스를 사용하여 소스코드를 간소화시킬 수 있다. -->
+	
+	<!-- 네임스페이스 p : property 태그를 대신할 수 있는 네임스페이스 -->
+	<bean id="dog" class="com.tje.prefix.Dog" p:name="바둑이" p:age="3" />
+	
+	<!-- 네임스페이스 c : construct-arg 태그를 대신하여 사용할 수 있는 네임스페이스 --> 
+	<bean id="cat" class="com.tje.prefix.Cat" p:name="나비" p:age="5" /> 
+
+	<bean id="p1" class="com.tje.prefix.Person" c:name="ABC" c:age="11" p:pet-ref="dog" />
+	<bean id="p2" class="com.tje.prefix.Person" c:name="DEF" c:age="22" p:pet-ref="cat" />
+
+</beans>

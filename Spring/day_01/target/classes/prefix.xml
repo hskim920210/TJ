@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="dog" class="com.tje.prefix.Dog" > 
+		<property name="name" value="바둑이" />
+		<property name="age" value="3" />
+	</bean>
+	<bean id="cat" class="com.tje.prefix.Cat" > 
+		<property name="name" value="나비" />
+		<property name="age" value="5" />
+	</bean>
+
+	<bean id="p1" class="com.tje.prefix.Person">
+		<constructor-arg index="0" value="ABC" />
+		<constructor-arg index="1" value="11" />
+		<property name="pet">
+			<ref bean="dog" />
+		</property>
+	</bean>
+	
+	<bean id="p2" class="com.tje.prefix.Person">
+		<constructor-arg name="name" value="DEF" />
+		<constructor-arg name="age" value="22" />
+		<property name="pet" ref="cat" />
+	</bean>
+
+</beans>
