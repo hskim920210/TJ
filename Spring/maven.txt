@@ -1,0 +1,38 @@
+maven의 conf의 settings.xml에서
+localRepository를 메이븐 경로(D:\dev\spring\tools\apache-maven-3.6.1)
+의 repository 폴더 만들어서 지정한다.
+(<localRepository>D:\dev\spring\tools\apache-maven-3.6.1\repository</localRepository>) 
+이 태그를 <!-- localRepository 주석 부분의 바깥에 작성한다.
+
+java ee에서 윈도우-프리퍼런스-Maven-UserSettings에서 
+UserSettings Browse 클릭후 maven 폴더의 conf 안에 있는
+settings.xml으로 설정 뒤
+Local Repository 가 D:\dev\spring\tools\apache-maven-3.6.1\repository가 맞는지 본다.
+
+그다음 windows-show view에서 others 클릭 하면 maven Repositories 클릭
+
+그러면 아래 창에 Maven Repositories 뜬다. 이 때 
+Global Repositories 누르면 central 우클릭 - rebuild Index 클릭후 ok 하면
+인덱스 리빌딩 완료될때까지 기다린다.
+
+
+// 이클립스에 스프링 툴을 설치하는 형식
+help - 이클립스 마켓플레이스
+find에 sts 입력후 엔터
+spring tools 4 (3버전으로 만든건 4에서 호환 X 이런식임)
+install-뺄건없이 컨펌
+i accept - finish
+설치 완료 후 재실행 - 같은 과정으로 sts 3도 인스톨한다.
+
+// 또는 sts 툴을 받는 방법
+구글에 sts 검색 https://spring.io/tools 접속
+Spring Tools 4 for Eclipse 로 받으면 되긴됨. 지금 하진 않는다.
+
+
+eclipse에 mvn eclipse:eclipse 다 한뒤에
+
+우클릭 project .. maven-maven project에서 검색을 기다린다.
+org.apache.maven 에서 artifactId : quickstart - version 1.4를 실행
+그룹 아이디는 com.tje
+아티팩트 아이디는 first 로 finish 한다.
+
