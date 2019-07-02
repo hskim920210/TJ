@@ -1,0 +1,6 @@
+p.49 가장 최상의 beanfactory
+AbstractApplicationContext : 부모추상클래스
+
+p.50 2.1 싱글톤 객체
+스프링 컨테이너는 싱글톤 패턴을 지원한다.
+빈 객체는 하나 만들어진다.
