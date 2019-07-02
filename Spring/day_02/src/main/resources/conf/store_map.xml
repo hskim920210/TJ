@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="store" class="com.tje.model.Store" c:name="돈까스집" c:location="신촌" >
+		<property name="products">
+			<!-- Map 타입의 객체인 경우 값을 주입하기 위한 Map 태그 -->
+			<map>
+				<entry>
+					<key><value>일반돈까스</value></key>
+					<value>6000</value>
+				</entry>
+				<entry key="치즈돈까스" value="7500" />
+				<entry key="생선까스" value="7000" />
+			</map>
+		</property>
+	</bean>
+
+	
+
+</beans>

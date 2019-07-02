@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- @Autowired 어노테이션을 적용하기 위한 설정 -->
+	<context:annotation-config />
+	
+	<!-- @Autowired에 의해서 Person 클래스의 pet 멤버에 자동으로 연결되는 dog 객체 -->
+	<bean id="dog" class="com.tje.model.Dog">
+		<!-- @Qualifier 어노테이션에 지정된 값을 상용하여 자동으로 DI 할 수 있도록 제어하는 태그 -->
+		<qualifier value="happy"></qualifier>
+	</bean>
+	<bean id="cat" class="com.tje.model.Cat" />
+	
+	
+	<!-- @Autowired가 적용되었으므로 명시적으로 dog 객체를 pet 멤버에 적용할 필요가 없다. -->
+	<bean id="p1" class="com.tje.model.PersonWithAnnotation" p:name="A" />
+	<bean id="p2" class="com.tje.model.PersonWithAnnotation" p:name="B"  />
+
+</beans>

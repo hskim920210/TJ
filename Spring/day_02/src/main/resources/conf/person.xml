@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="dog" class="com.tje.model.Dog" />
+	<bean id="cat" class="com.tje.model.Cat" />
+	
+	<!-- 강아지를 소유하고 있는 이름이 A인 사람 -->
+	<bean id="p1" class="com.tje.model.Person" c:name="A" c:pet-ref="dog" />
+	<!-- 고양이를 소유하고 있는 이름이 B인 사람 -->
+	<bean id="p2" class="com.tje.model.Person" c:name="B" c:pet-ref="cat" />
+	
+
+</beans>
