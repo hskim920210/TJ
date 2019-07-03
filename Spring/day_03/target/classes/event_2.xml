@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 상속관계를 구현하지 않고 스프링 컨테이너의 시작/종료 시점에 실행할 메소드를 지정하는 방법 -->
+	<bean id="bean" class="com.tje.event.BeanWithCustomMethod" init-method="init" destroy-method="destroy" scope="prototype" />
+
+</beans>

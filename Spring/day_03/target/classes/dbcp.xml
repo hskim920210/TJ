@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<!-- dbcp.properties의 값들을 불러오는 -->
+	<!-- resources 디렉토리 내부에 저장된 프로퍼티 파일을 읽어오는 코드 -->
+	<!-- 읽어올 땐 key값만으로 불러와진다 with EL. -->
+	<context:property-placeholder location="classpath:/dbcp.properties"/>
+	<context:annotation-config />
+	<context:component-scan base-package="com.tje.dbcp" />
+	
+	
+	
+	<util:map id="map">
+		<entry key="JDBC_DRIVER" value="${JDBC_DRIVER}" />
+		<entry key="JDBC_URL" value="${JDBC_URL}" />
+		<entry key="JDBC_USER" value="${JDBC_USER}" />
+		<entry key="JDBC_PASSWORD" value="${JDBC_PASSWORD}" />
+		<entry key="VALIDATION_QUERY" value="${VALIDATION_QUERY}" />
+		<entry key="MIN_IDLE" value="${MIN_IDLE}" />
+		<entry key="MAX_TOTAL" value="${MAX_TOTAL}" />
+		<entry key="POOL_NAME" value="${POOL_NAME}" />
+	</util:map>
+	
+	<!-- 
+	<bean id="dbcp" class="com.tje.dbcp.DBCPInitBean" init-method="init" />
+	-->
+</beans>
