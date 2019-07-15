@@ -1,0 +1,29 @@
+소켓통신
+
+http://sockjs.org/ 접속 (자바스크립트를 통해 서버쪽에 소켓을 연결할 수 있는 라이브러리)
+
+Getting Started 부분.
+
+<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+를 해도 되지만
+
+실제 라이브러리를 다운받아서 핡것.
+dist 폴더 가서 sockjs.js
+
+sockjs.min.js 받기. (개행 등을 모두 제외한 버전)
+raw 눌러서 전부 복사
+
+프로젝트 pom에서
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-websocket</artifactId>
+	<version>${org.springframework-version}</version>
+</dependency>
+
+추가 후
+
+src/main/webapp/resources/js 에 sockjs.min.js 를 new - other - javascript - javascript source file
+
+생성하여 깃허브에서 긁은 소스 붙여넣기 저장
+
+jquery도 쓸것이므로 day_06_message에서 jquery.js 가져왔다.
